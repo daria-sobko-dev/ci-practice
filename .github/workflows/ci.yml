@@ -4,9 +4,14 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps: 
-      - name: Chackout
+      - name: Checkout
         uses: actions/checkout@v3
       - name: Install
         run: npm ci
       - name: Lint
         run: npm run lint
+      - name: Set up Node.js
+            uses: actions/setup-node@v4
+            with:
+              node-version: 22
+              cache: npm
